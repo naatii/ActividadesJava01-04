@@ -32,10 +32,12 @@ class Ejercicios {
     public static void actividad9() {
     }
 
-    public static void actividad10() {
+    public static double actividad10(double megaByte) {
+        return megaByte * 1000;
     }
 
-    public static void actividad11() {
+    public static double actividad11(double kiloByte) {
+        return kiloByte / 1000;
     }
 
     public static void actividad12() {
@@ -80,8 +82,8 @@ public class Main_04 {
         Ejercicios.actividad7();
         Ejercicios.actividad8();
         Ejercicios.actividad9();
-        Ejercicios.actividad10();
-        Ejercicios.actividad11();
+        Ejercicios.actividad10(1.0);
+        Ejercicios.actividad11(1000.0);
         Ejercicios.actividad12();
         Ejercicios.actividad13();
         Ejercicios.actividad14();
