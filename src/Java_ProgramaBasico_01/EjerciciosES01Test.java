@@ -1,6 +1,7 @@
+package Java_ProgramaBasico_01;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import Java_ProgramaBasico_01. *;
 
 class EjerciciosESTest {
 
