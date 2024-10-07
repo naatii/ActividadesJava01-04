@@ -1,0 +1,8 @@
+¿Tu pareja ha cambiado su comportamiento últimamente?
+¿Ha dejado de interesarse por ti?
+¿Recibes menos mensajes o llamadas de su parte?
+¿Ha comenzado a salir más sin ti?
+¿Tienes sospechas de que habla con otras personas?
+CONCLUSION 0-6: "No hay motivos de preocupación."
+CONCLUSION 7-10: "Es posible que haya algo que debas investigar."
+CONCLUSION 11-15: "Deberías hablar con tu pareja sobre tus sospechas."

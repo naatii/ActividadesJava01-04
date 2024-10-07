@@ -15,12 +15,28 @@ class Ejercicios {
     }
 
     public static void actividad4() {
+        for (int i = 320; i >= 160; i -= 20){
+            System.out.println(i);
+        }
+
     }
 
     public static void actividad5() {
+        int numero =320;
+        while (numero >= 160){
+            System.out.println(numero);
+            numero -= 20;
+
+        }
     }
 
     public static void actividad6() {
+        int numero =320;
+        do {
+            System.out.println(numero);
+            numero -= 20;
+        }
+        while (numero >= 160);
     }
 
     public static void actividad7() {

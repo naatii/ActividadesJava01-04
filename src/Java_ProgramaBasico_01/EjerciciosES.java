@@ -1,47 +1,125 @@
 package Java_ProgramaBasico_01;
 
 import java.util.Locale;
+import java.util.Scanner;
 
 public class EjerciciosES {
     public static double multiplicar(int i, int i1) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese el primer numero: ");
+        int num = sc.nextInt();
+        System.out.println("Ingrese el segundo numero: ");
+        int num2 = sc.nextInt();
 
-        return 0;
+        int resultado = num * num2;
+        System.out.println("El resultado es: " + resultado);
+        return resultado;
     }
 
     public static double eurosAPesetas(int i) {
+        Scanner sc = new Scanner(System.in);
+        double pesetas = 166.386;
 
-        return 0;
+        System.out.println("Introduce los euros que quieres convertir en pesetas: ");
+        int euros = sc.nextInt();
+
+        double resultado = euros * pesetas;
+        System.out.println("la conversion es: " + resultado + " pesetas");
+        return resultado;
     }
 
     public static double pesetasAEuros(int i) {
-        return 0;
+        Scanner sc = new Scanner(System.in);
+        double euros = 1/166.386;
+
+        System.out.println("Introduce las pesetas que quieres convertir a euros: ");
+        double pesetas = sc.nextDouble();
+        double resultado = pesetas * euros;
+        System.out.println("El la conversion es: " + resultado + " euros");
+        return resultado;
     }
 
-    public static String operacionesBasicas(int i, int i1) {
+    public static String operacionesBasicas() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Ingrese el primer numero: ");
+        int num1 = sc.nextInt();
+        System.out.println("Ingrese el segundo numero: ");
+        int num2 = sc.nextInt();
+
+        System.out.println("La suma es: "+ (num1 + num2));
+        System.out.println("La resta es: "+ (num1 - num2));
+        System.out.println("La division es: "+ (num1 / num2));
+        System.out.println("La multiplicacion es: "+ (num1 * num2));
         return null;
     }
 
     public static double areaRectangulo(int i, int i1) {
-        return 0;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingresa la base del rectangulo ");
+        double base = sc.nextDouble();
+        System.out.println("Ingresa la altura del rectangulo ");
+        double altura = sc.nextDouble();
+
+        double area = altura * base;
+        System.out.println("El area del rectangulo es: " + area);
+        return area;
     }
 
     public static double areaTriangulo(int i, int i1) {
-        return 0;
+        Scanner sc = new Scanner(System.in);
 
+        System.out.println("Ingrese la base del triangulo: ");
+        double base = sc.nextDouble();
+
+        System.out.println("Ingrese la altura del triangulo: ");
+        double altura = sc.nextDouble();
+
+        double resultado = base*altura/2;
+        System.out.println("El resultado es: " + resultado);
+        return resultado;
     }
 
     public static double calcularTotalFactura(int i) {
-        return 0;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("ingrese la base Imponible");
+        int baseImponible = sc.nextInt();
+
+        double iva = 1.21;
+
+        double total = baseImponible * iva;
+        System.out.println("El total es: " + total);
+        return total;
 
     }
 
     public static double calcularSalarioSemanal(int i) {
-        return 0;
+        Scanner sc = new Scanner(System.in);
+
+        int euroLaHora = 12;
+        int semama = 7;
+        System.out.println("Introduce las horas trabajadas: ");
+        int horasTrabajadas = sc.nextInt();
+
+        int totalHoras = (horasTrabajadas * euroLaHora) * semama;
+        System.out.println("El salario semanal es: " + totalHoras);
+        return totalHoras;
 
     }
 
     public static double volumenCono(int i, int i1) {
-        return 0;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Introduce el radio del cono: ");
+        int radio = sc.nextInt();
+
+        System.out.println("Introduce la altura del cono: ");
+        int altura = sc.nextInt();
+
+        double volume = (1.0 / 3) * Math.PI * Math.pow(radio, 2) * altura;
+
+        System.out.println("El volume del cono es: " + volume);
+        return volume;
 
     }
 

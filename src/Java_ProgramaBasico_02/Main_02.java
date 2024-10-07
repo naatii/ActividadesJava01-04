@@ -4,7 +4,7 @@ package Java_ProgramaBasico_02;
 
 public class Main_02 {
     public static void main(String[] args) {
-        EjerciciosSwitch.actividad1();
+     /*   EjerciciosSwitch.actividad1();
         EjerciciosSwitch.actividad2();
         EjerciciosSwitch.actividad3();
         EjerciciosSwitch.actividad4();
@@ -24,6 +24,6 @@ public class Main_02 {
         EjerciciosSwitch.actividad18();
         EjerciciosSwitch.actividad19();
         EjerciciosSwitch.actividad20();
-        EjerciciosSwitch.actividad21();
+        EjerciciosSwitch.actividad21();*/
     }
 }

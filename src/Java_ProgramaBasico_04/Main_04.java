@@ -2,6 +2,8 @@ package Java_ProgramaBasico_04;
 
 //Aquí van las clses de toda la relación 1
 
+import java.util.Scanner;
+
 class Ejercicios {
     public static void actividad1(){
 
@@ -47,9 +49,68 @@ class Ejercicios {
     }
 
     public static void actividad14() {
+        Scanner sc = new Scanner(System.in);
+        int min = 0;
+        int max = 100;
+        int intentos = 5;
+        boolean adivinado = false;
+
+        System.out.println("Piensa en un número entre 0 y 100. Intentaré adivinarlo en 5 intentos.");
+
+        for (int i = 1; i <= intentos && !adivinado; i++) {
+            int guess = (min + max) / 2;
+            System.out.println("Intento " + i + ": ¿Es " + guess + "? (Responde: 'mayor', 'menor', 'igual')");
+            String respuesta = sc.nextLine();
+
+            if (respuesta.equalsIgnoreCase("igual")) {
+                System.out.println("¡He adivinado! Tu número es " + guess);
+                adivinado = true;  // Cambia el estado a "adivinado"
+            } else if (respuesta.equalsIgnoreCase("mayor")) {
+                min = guess + 1;  // Ajusta el límite inferior
+            } else if (respuesta.equalsIgnoreCase("menor")) {
+                max = guess - 1;  // Ajusta el límite superior
+            }
+
+            if (i == intentos && !adivinado) {
+                System.out.println("¡Se acabaron los intentos! No pude adivinar tu número.");
+            }
+        }
+
+        sc.close();
+
     }
 
     public static void actividad15() {
+        // Definir las notas
+        String[] notas = {"do", "re", "mi", "fa", "sol", "la", "si"};
+
+        // Generar un número aleatorio de notas (múltiplo de 4 entre 4 y 28)
+        int numNotas = (int) (Math.random() * 7 + 1) * 4; // Posibles valores: 4, 8, 12, ..., 28
+
+        // Inicializar la melodía como una cadena vacía
+        String melodia = "";
+
+        // Elegir la primera nota
+        String primeraNota = notas[(int) (Math.random() * notas.length)];
+        melodia += primeraNota + " "; // Concatenar la primera nota
+
+        // Generar las notas restantes
+        for (int i = 1; i < numNotas - 1; i++) {
+            if (i % 4 == 0) {
+                melodia += "| "; // Separar compases con "|"
+            }
+            melodia += notas[(int) (Math.random() * notas.length)] + " "; // Concatenar la nota
+        }
+
+        // Añadir la última nota, que debe ser la misma que la primera
+        if ((numNotas - 1) % 4 == 0) {
+            melodia += "| "; // Añadir el separador de compás
+        }
+        melodia += primeraNota + " ||"; // Finalizar la melodía con "||"
+
+        // Mostrar la melodía generada
+        System.out.println(melodia);
+
     }
 
     public static void actividad16() {
