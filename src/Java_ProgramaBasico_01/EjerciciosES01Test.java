@@ -3,7 +3,7 @@ package Java_ProgramaBasico_01;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class EjerciciosESTest {
+class EjerciciosAleatoriosBuclesESTest {
 
     @Test
     public void testMultiplicar() {
