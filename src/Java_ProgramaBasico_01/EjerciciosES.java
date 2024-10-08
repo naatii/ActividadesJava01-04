@@ -1,47 +1,69 @@
 package Java_ProgramaBasico_01;
 
 import java.util.Locale;
+import java.util.Scanner;
 
 public class EjerciciosES {
-    public static double multiplicar(int i, int i1) {
+    public static double multiplicar(int num, int num2) {
 
-        return 0;
+        int resultado = num * num2;
+        System.out.println("El resultado es: " + resultado);
+        return resultado;
     }
 
-    public static double eurosAPesetas(int i) {
-
-        return 0;
+    public static double eurosAPesetas(int euros) {
+        double pesetas = 166.386;
+        double resultado = euros * pesetas;
+        return resultado;
     }
 
-    public static double pesetasAEuros(int i) {
-        return 0;
+    public static double pesetasAEuros(int pesetas) {
+        double euros = 1/166.386;
+        double resultado = pesetas * euros;
+        return resultado;
     }
 
-    public static String operacionesBasicas(int i, int i1) {
-        return null;
+    public static String operacionesBasicas(double a, double b) {
+        double suma = a + b;
+        double resta = a - b;
+        double multiplicacion = a * b;
+        double division = a / b;
+
+        // Cambiamos el locale a US para el formato
+        Locale locale = Locale.US;
+
+        // Formateamos los resultados para que tengan dos decimales usando el locale US
+        return String.format(locale, "Suma: %.2f\nResta: %.2f\nMultiplicación: %.2f\nDivisión: %.2f",
+                suma, resta, multiplicacion, division);
     }
 
-    public static double areaRectangulo(int i, int i1) {
-        return 0;
+    public static double areaRectangulo(int base, int altura) {
+        return base*altura;
     }
 
-    public static double areaTriangulo(int i, int i1) {
-        return 0;
-
+    public static double areaTriangulo(int base, int altura) {
+        return base*altura/2;
     }
 
-    public static double calcularTotalFactura(int i) {
-        return 0;
+    public static double calcularTotalFactura(int baseImponible) {
+        double iva = 1.21;
 
-    }
-
-    public static double calcularSalarioSemanal(int i) {
-        return 0;
+        return baseImponible * iva;
 
     }
 
-    public static double volumenCono(int i, int i1) {
-        return 0;
+    public static double calcularSalarioSemanal(int horasTrabajadas) {
+        int euroLaHora = 12;
+
+        return (horasTrabajadas * euroLaHora) ;
+
+    }
+
+    public static double volumenCono(int radio, int altura) {
+
+        double volume = (1.0 / 3) * Math.PI * Math.pow(radio, 2) * altura;
+
+        return volume;
 
     }
 

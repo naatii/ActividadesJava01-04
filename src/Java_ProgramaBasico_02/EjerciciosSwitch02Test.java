@@ -170,8 +170,8 @@ class EjerciciosSwitchTest {
     void testDibujarPiramide() {
         String expectedPiramide =
                 "  *  \n" +
-                        " *** \n" +
-                        "*****\n";
+                " *** \n" +
+                "*****\n";
         assertEquals(expectedPiramide, EjerciciosSwitch.dibujarPiramide('*', "arriba", 3));
     }
 

@@ -1,5 +1,9 @@
 package Java_ProgramaBasico_02;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.Scanner;
+
 class EjerciciosSwitch {
 
 
@@ -169,19 +173,142 @@ class EjerciciosSwitch {
         return "";
     }
 
-    public static String dibujarPiramide(char c, String arriba, int i) {
-        return arriba;
+    public static String dibujarPiramide(char caracter, String orientacion, int fila) {
+        StringBuilder resultado = new StringBuilder(); // Usar StringBuilder para eficiencia en la concatenación
+
+        switch (orientacion.toLowerCase()) {
+            case "arriba":
+                for (int i = 1; i <= fila; i++) {
+                    // Espacios para centrar la pirámide
+                    resultado.append(" ".repeat(fila - i));
+                    // Caracteres de la pirámide
+                    resultado.append(String.valueOf(caracter).repeat(2 * i - 1));
+                    resultado.append("\n");  // Nueva línea
+                }
+                break;
+
+            case "abajo":
+                for (int i = fila; i >= 1; i--) {
+                    // Espacios para centrar la pirámide
+                    resultado.append(" ".repeat(fila - i));
+                    // Caracteres de la pirámide
+                    resultado.append(String.valueOf(caracter).repeat(2 * i - 1));
+                    resultado.append("\n");  // Nueva línea
+                }
+                break;
+
+            case "izquierda":
+                for (int i = 1; i <= fila; i++) {
+                    // Caracteres de la pirámide
+                    resultado.append(String.valueOf(caracter).repeat(i));
+                    resultado.append("\n");  // Nueva línea
+                }
+                for (int i = fila - 1; i >= 1; i--) {
+                    // Caracteres de la pirámide
+                    resultado.append(String.valueOf(caracter).repeat(i));
+                    resultado.append("\n");  // Nueva línea
+                }
+                break;
+
+            case "derecha":
+                for (int i = 1; i <= fila; i++) {
+                    // Espacios a la izquierda
+                    resultado.append(" ".repeat(fila - i));
+                    // Caracteres de la pirámide
+                    resultado.append(String.valueOf(caracter).repeat(i));
+                    resultado.append("\n");  // Nueva línea
+                }
+                for (int i = fila - 1; i >= 1; i--) {
+                    // Espacios a la izquierda
+                    resultado.append(" ".repeat(fila - i));
+                    // Caracteres de la pirámide
+                    resultado.append(String.valueOf(caracter).repeat(i));
+                    resultado.append("\n");  // Nueva línea
+                }
+                break;
+
+            default:
+                resultado.append("Orientación no válida\n");
+                break;
+        }
+
+        return resultado.toString(); // Convertir StringBuilder a String antes de devolver
     }
 
+
     public static int calcularProbabilidadInfidelidad() {
-        return 0;
+        String[] preguntas = new String[5];
+        String[] conclusiones = new String[3];
+        //Cargar preguntas y conclusiones desde el archivo
+        try (BufferedReader br = new BufferedReader(new FileReader("test_infidelidad.txt"))) {
+            for (int i = 0; i < 5; i++) {
+                preguntas[i] = br.readLine();
+            }
+            for (int i = 0; i < 3; i++) {
+                conclusiones[i] = br.readLine();
+            }
+        } catch (Exception e) {
+            System.out.println("Error al leer el arhivo:"+e.getMessage());
+            return 0;
+        }
+        Scanner sc = new Scanner(System.in);
+        int puntos = 0;
+
+        // hacemos las preguntas al usuario
+        for(String pregunta : preguntas) {
+            System.out.println(pregunta+" (verdadero/falso)");
+            if (sc.nextLine().trim().equals("verdadero")) {
+                puntos+= 3;
+            }
+        }
+
+        // Determina la conclusion según la puntuación
+        String conclusion;
+        if (puntos <= 6){
+            conclusion = conclusiones[0];
+        } else if (puntos <= 10) {
+            conclusion = conclusiones[1];
+        } else {
+            conclusion = conclusiones[2];
+        }
+        System.out.println(conclusion);
+        sc.close();
+        return puntos;
     }
 
     public static int obtenerUltimaCifra(int numero) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Introduce un numero entero: ");
+        numero = sc.nextInt();
+
+        // se calcula la ultima cifra
+        int ultimaCifra = Math.abs(numero % 10);
+
+        System.out.println("La ultima cifra de "+numero+" es: "+ultimaCifra);
+        sc.close();
         return numero;
     }
 
     public static int obtenerPrimeraCifra(int numero) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce un numero entero (hasta 5 cifras): ");
+        numero = sc.nextInt();
+        if (numero < -99999 || numero > 99999) {
+            System.out.println("El numero debe tener hasta 5 cifras");
+        }else {
+            // usamos el valor absoluto para trabajar con un numero positivo
+            numero = Math.abs(numero);
+            // obtener la primera cifra
+            int primeraCifra = numero;
+
+            // dividir el numero entre 10 hasta que sea menor que 10
+            while (primeraCifra >= 10) {
+                primeraCifra /= 10;
+            }
+
+            System.out.println("La primera cifra de "+numero+" es: "+primeraCifra);
+        }
         return numero;
     }
 
