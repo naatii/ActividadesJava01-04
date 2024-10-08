@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import static org.junit.jupiter.api.Assertions.*;
 
-class EjerciciosBuclesSwitchTest {
+class EjerciciosSwitchTest {
 
     // Ejercicio 1
     @ParameterizedTest
