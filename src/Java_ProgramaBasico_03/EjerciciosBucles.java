@@ -17,29 +17,36 @@ class EjerciciosBucles {
         return null;
     }
 
-    public static void actividad4() {
+    public static List<Integer> ejercicio4() {
+        List<Integer> lista = new ArrayList<>();
         for (int i = 320; i >= 160; i -= 20){
             System.out.println(i);
+            lista.add(i);
         }
-
+        return  lista;
     }
 
-    public static void actividad5() {
+    public static List<Integer> ejercicio5() {
+        List<Integer> lista = new ArrayList<>();
         int numero =320;
         while (numero >= 160){
             System.out.println(numero);
+            lista.add(numero);
             numero -= 20;
-
         }
+        return lista;
     }
 
-    public static void actividad6() {
+    public static List<Integer> ejercicio6() {
+        List<Integer> lista = new ArrayList<>();
         int numero =320;
         do {
             System.out.println(numero);
+            lista.add(numero);
             numero -= 20;
         }
         while (numero >= 160);
+        return lista;
     }
 
     public static List<Integer> ejercicio7(int i) {
