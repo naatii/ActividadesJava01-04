@@ -52,14 +52,14 @@ class EjerciciosBucles {
     public static List<Integer> ejercicio12(int n) {
         List<Integer> fibonacci = new ArrayList<>();
         if (n <= 0) {
-            return fibonacci; // Retorna una lista vacía si n <= 0
+            return fibonacci;
         }
 
         // Generar la secuencia de Fibonacci
-        fibonacci.add(0); // El primer número es 0
+        fibonacci.add(0);
 
         if (n > 1) {
-            fibonacci.add(1); // El segundo número es 1
+            fibonacci.add(1);
         }
 
         for (int i = 2; i < n; i++) {
