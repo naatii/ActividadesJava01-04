@@ -77,12 +77,50 @@ class EjerciciosAleatorios {
     }
 
     public static int[] ejercicio14(boolean[] mayorMenor) {
-        return null;
+        int[] intentos = new int[mayorMenor.length];
+        int min = 0;
+        int max = 100;
+        int intento = (min + max) / 2; // Comenzamos a adivinar en la mitad del rango
+
+        for (int i = 0; i < mayorMenor.length; i++) {
+            intentos[i] = intento; // Guardar el intento actual
+
+            if (mayorMenor[i]) {
+                // Si mayorMenor[i] es true, el siguiente número debe ser mayor
+                min = intento + 1;
+            } else {
+                // Si mayorMenor[i] es false, el siguiente número debe ser menor
+                max = intento - 1;
+            }
+
+            // Calcular el siguiente intento en el rango reducido
+            intento = (min + max) / 2;
+        }
+
+        return intentos;
     }
 
+
     public static String ejercicio15() {
-        return null;
+        String[] notas = {"Do", "Re", "Mi", "Fa", "Sol", "La", "Si"};
+        Random rand = new Random();
+
+        // Generar la primera nota aleatoria
+        String primeraNota = notas[rand.nextInt(notas.length)];
+        StringBuilder melodia = new StringBuilder(primeraNota);
+
+        // Generar una secuencia de 6 notas más aleatorias
+        for (int i = 0; i < 6; i++) {
+            String notaAleatoria = notas[rand.nextInt(notas.length)];
+            melodia.append(" ").append(notaAleatoria);
+        }
+
+        // Agregar el delimitador | y luego repetir la primera nota al final
+        melodia.append(" | ").append(primeraNota).append(" ||");
+
+        return melodia.toString();
     }
+
 
     public static void ejercicio16() {
     }
